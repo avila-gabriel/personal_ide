@@ -3,17 +3,8 @@ vim.o.backspace = "indent,eol,start"
 vim.o.mouse = "a"
 vim.o.termguicolors = true
 vim.o.number = true
-vim.cmd("syntax on")
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-
-vim.g.clipboard = {
-	name = "clip-provider",
-	copy = {
-		["+"] = "clip.exe",
-		["*"] = "clip.exe",
-	},
-}
 
 vim.g.mapleader = " "
 
@@ -45,6 +36,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins", {
-	install = { colorscheme = { "habamax" } },
 	checker = { enabled = true },
 })
+
+-- activate your theme
+vim.cmd.colorscheme("custom_colorscheme")
+vim.opt.guifont = "JetBrainsMono Nerd Font:h13"
